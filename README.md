@@ -39,18 +39,18 @@ make sure the code reflects your own judgment.
 | **Responsiveness** | Works cleanly across the defined breakpoints (mobile → xxl). |
 | **Semantic HTML & accessibility** | Correct elements, keyboard support, alt text, `mailto:`/`tel:` semantics. |
 | **Code quality** | Clear component structure, sensible typing, no dead code or anti-patterns. |
-| **State & data** | Task C handles loading, appending, and "no more results" gracefully. |
+| **State & data** | The blog block handles loading, appending, and "no more results" gracefully. |
 | **Git hygiene** | Small, readable commits with meaningful messages. |
 
-Tests are welcome but not required — if you write one, the Task C logic is the
-highest-value target. A Vitest + Testing Library harness is already wired up.
+Tests are welcome but not required — if you write one, the blog post load-more
+logic is the highest-value target. A Vitest + Testing Library harness is already wired up.
 
 ---
 
 ## 🏁 Getting started
 
 ```bash
-nvm use            # uses the version in .nvmrc (Node 22)
+nvm use 22         # or just `nvm use` on macOS/Linux
 corepack enable    # or: npm i -g yarn
 yarn               # install dependencies
 yarn dev           # http://localhost:3000
@@ -79,6 +79,10 @@ Figma file:
 
 All content can be hardcoded — extract any images/icons you need from Figma and
 drop them in `public/`.
+
+> **Note:** The Figma file uses SF Pro Display. We've substituted Source Sans 3
+> in the codebase for licensing and web compatibility — match the design's
+> sizing and weight, not the exact typeface.
 
 ---
 

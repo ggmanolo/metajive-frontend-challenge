@@ -8,6 +8,10 @@
   --color-light-blue: #64b5f6;
   --color-black: #000000;
   --color-white: #ffffff;
+  --color-bg-base: #0f1327;
+  --color-bg-card: #191f40;
+  --color-btn-red-from: #9e2432;
+  --color-btn-red-to: #ce2d3f;
 
   --breakpoint-sm: 375px;
   --breakpoint-md: 768px;
@@ -20,17 +24,22 @@
 
 /* A page container that mirrors the design's gutters and max width. */
 @utility container {
-  max-width: 100%;
+  max-width: 1268px;
+  width: 100%;
   margin-inline: auto;
   padding-inline: 20px;
+  padding-block: 64px;
 
   @media (width >= 768px) {
     padding-inline: 70px;
   }
 
-  @media (width >= 1780px) {
-    max-width: 1780px;
-    padding-inline: 0;
+  @media (width >= 1024px) {
+    padding-block: 80px;
+  }
+
+  @media (width >= 1440px) {
+    padding-block: 96px;
   }
 }
 
@@ -42,9 +51,17 @@ html {
   font-size: 62.5%;
 }
 
+:root {
+  --color-text-muted: rgba(255, 255, 255, 0.5);
+  --gradient-btn: linear-gradient(135deg, var(--color-btn-red-from) 0%, var(--color-btn-red-to) 100%);
+  --gradient-card: linear-gradient(0deg, var(--color-bg-base) 0%, var(--color-bg-card) 97.36%);
+}
+
 body {
   font-family: var(--font-sans);
   font-size: 1.6rem;
+  background-color: var(--color-bg-base);
+  color: var(--color-white);
 }
 
 /* Development-only column overlay (toggled in app/page.tsx). */
@@ -57,5 +74,5 @@ body {
 
 .devGrid .col {
   background-color: rebeccapurple;
-  opacity: 0.1;
+  opacity: 0.15;
 }

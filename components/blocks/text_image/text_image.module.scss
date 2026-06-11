@@ -1,6 +1,126 @@
-@use '../../../styles/variables';
-
 .root {
-  // Add your styles here.
-  display: block;
+  background: var(--gradient-card);
+  border-radius: 16px;
+  margin-block: 96px;
+  padding-block: 64px;
+
+  @media (width < 1024px) {
+    padding-block: 48px;
+  }
+
+  @media (width < 768px) {
+    padding-block: 40px;
+  }
+
+  @media (width < 480px) {
+    padding-block: 24px;
+  }
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 1.5rem;
+  margin-inline: auto;
+
+  @media (width < 768px) {
+    display: flex;
+    flex-direction: column;
+    min-height: unset;
+  }
+}
+
+.imageWrapper {
+  grid-column: 1 / 7;
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 16px;
+  overflow: hidden;
+
+  @media (width < 768px) {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    flex-shrink: 0;
+  }
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  grid-column: 8 / 13;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (width < 768px) {
+    padding: 40px 32px 48px;
+  }
+}
+
+.headline {
+  font-size: 4.8rem;
+  font-weight: 500;
+  color: var(--color-white);
+  line-height: 5.2rem;
+  letter-spacing: -0.1rem;
+  margin: 0 0 24px;
+
+  @media (width < 1440px) {
+    font-size: 3.6rem;
+    line-height: 4.4rem;
+  }
+
+  @media (width < 1024px) {
+    font-size: 3.2rem;
+    line-height: 3.4rem;
+    letter-spacing: -0.05rem;
+  }
+}
+
+.body {
+  p {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  p:first-child {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    letter-spacing: -0.05rem;
+    color: var(--color-white);
+    margin-bottom: 16px;
+
+    @media (width < 1024px) {
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+  }
+
+  p + p {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.05rem;
+    color: var(--color-text-muted);
+
+    @media (width < 1024px) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      letter-spacing: 0;
+    }
+  }
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 64px;
+
+  @media (width < 768px) {
+    margin-top: 32px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }

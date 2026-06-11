@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    // Allows the placeholder post images (Task C) to be used with next/image.
+    qualities: [75, 100],
     remotePatterns: [{ protocol: 'https', hostname: 'picsum.photos' }],
   },
 }

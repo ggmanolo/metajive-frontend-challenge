@@ -10,7 +10,7 @@ const TextImageBlock = ({ headline, body, image, email, phone }: TextImageProps)
         <Image src={image.src} alt={image.alt} fill className={styles.image} sizes="(min-width: 1268px) 634px, (min-width: 768px) calc(50vw - 70px), 100vw" priority quality={100} />
       </div>
       <div className={styles.content}>
-        <h2 id="text-image-heading" className={styles.headline}>
+        <h2 id="text-image-heading" className={styles.headlineMargin}>
           {headline}
         </h2>
         <div className={styles.body} dangerouslySetInnerHTML={{ __html: body }} />

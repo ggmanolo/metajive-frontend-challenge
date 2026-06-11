@@ -4,4 +4,5 @@ export default interface Asset {
   alt: string
   width: number
   height: number
+  caption?: string
 }

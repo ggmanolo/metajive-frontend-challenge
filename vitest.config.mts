@@ -8,6 +8,14 @@ export default defineConfig({
     environment: 'jsdom',
     globals: true,
     setupFiles: ['./vitest.setup.ts'],
+    server: {
+      deps: {
+        inline: ['next'],
+      },
+    },
+    alias: {
+      'next/image': resolve(__dirname, './__mocks__/next-image.tsx'),
+    },
   },
   resolve: {
     alias: {

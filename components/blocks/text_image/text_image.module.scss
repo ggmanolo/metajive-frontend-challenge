@@ -69,7 +69,28 @@
   }
 
   p:first-child {
+    font-size: 2.4rem;
+    line-height: 3rem;
+    letter-spacing: -0.05rem;
     margin-bottom: 16px;
+
+    @media (width < 1024px) {
+      font-size: 2rem;
+      line-height: 2.8rem;
+    }
+  }
+
+  p + p {
+    font-size: 2rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.05rem;
+    color: var(--color-text-muted);
+
+    @media (width < 1024px) {
+      font-size: 1.6rem;
+      line-height: 2.4rem;
+      letter-spacing: 0;
+    }
   }
 }
 

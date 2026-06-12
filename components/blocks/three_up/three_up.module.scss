@@ -1,6 +1,61 @@
-@use '../../../styles/variables';
-
 .root {
-  // Add your styles here.
-  display: block;
+  background: var(--gradient-card);
+  border-radius: 16px;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 24px;
+  margin-bottom: 40px;
+}
+
+.headline {
+  grid-column: 1 / 6;
+  text-wrap: balance;
+
+  @media (width < 1024px) {
+    grid-column: 1 / -1;
+  }
+}
+
+.copy {
+  grid-column: 7 / 13;
+  align-self: start;
+
+  @media (width < 1024px) {
+    grid-column: 1 / -1;
+    margin-top: 16px;
+  }
+}
+
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  @media (width < 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.loadMore {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.separator {
+  display: none;
+  height: 1px;
+  border: none;
+  background: rgba(216, 216, 216, 0.25);
+  margin-top: 40px;
+
+  @media (width >= 768px) {
+    display: block;
+  }
 }

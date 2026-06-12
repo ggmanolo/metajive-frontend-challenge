@@ -24,7 +24,7 @@ const SliderBlock = ({ headline, copy, slides }: SliderProps) => {
         <Swiper modules={[Autoplay]} loop autoplay={{ delay: 5000, disableOnInteraction: true }} slidesPerView="auto" centeredSlides spaceBetween={16} onSwiper={setSwiper} className={styles.swiper}>
           {[...slides, ...slides, ...slides].map((slide, i) => (
             <SwiperSlide key={`${slide.src}-${i}`} className={styles.slide} aria-roledescription="slide">
-              <Image src={slide.src} alt={slide.alt} fill className={styles.slideImage} sizes="(min-width: 1268px) 1128px, (min-width: 768px) calc(100vw - 140px), calc(100vw - 40px)" quality={100} />
+              <Image src={slide.src} alt={slide.alt} fill className={styles.slideImage} priority={i === 0} sizes="(min-width: 1268px) 1128px, (min-width: 768px) calc(100vw - 140px), calc(100vw - 40px)" quality={100} />
               {slide.caption && <p className={styles.caption}>{slide.caption}</p>}
             </SwiperSlide>
           ))}

@@ -48,6 +48,27 @@
   margin-top: 40px;
 }
 
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cardEnter {
+  animation: card-enter 0.5s ease forwards;
+  opacity: 0;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation: none;
+    opacity: 1;
+  }
+}
+
 .separator {
   display: none;
   height: 1px;

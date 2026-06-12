@@ -46,6 +46,7 @@
 // Full-width naturally — no tricks needed since section has no container
 .swiperWrapper {
   position: relative;
+  overflow: hidden;
 }
 
 .swiper {
